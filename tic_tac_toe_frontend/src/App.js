@@ -13,6 +13,26 @@ const Square = ({ value, onClick, disabled }) => (
   </button>
 );
 
+/**
+ * @typedef {('X'|'O'|null)} CellValue
+ * 
+ * @typedef {Object} GameState
+ * @property {CellValue[]} board - The game board state
+ * @property {boolean} isXNext - Whether X is the next player
+ * @property {boolean} isGameOver - Whether the game has ended
+ */
+
+// Helper function to validate game state (unused, for demonstration)
+const validateGameState = (board, isXNext) => {
+  const xCount = board.filter(cell => cell === 'X').length;
+  const oCount = board.filter(cell => cell === 'O').length;
+  return {
+    isValid: Math.abs(xCount - oCount) <= 1 && (xCount >= oCount) === isXNext,
+    xCount,
+    oCount
+  };
+};
+
 // PUBLIC_INTERFACE
 function App() {
   const [board, setBoard] = useState(Array(9).fill(null));
