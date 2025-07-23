@@ -53,10 +53,12 @@
   justify-content: center;
 }
 
+/* Enhanced hover effect for better user feedback */
 .square:hover {
   background: var(--accent);
   transform: scale(1.05) rotate(1deg);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.35s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .square:disabled {
