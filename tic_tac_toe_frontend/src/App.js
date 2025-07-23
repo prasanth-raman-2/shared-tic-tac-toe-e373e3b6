@@ -52,6 +52,7 @@ function App() {
 
   // Reset the game
   const restartGame = () => {
+    // TODO: In the future, we could track game statistics here
     setBoard(Array(9).fill(null));
     setIsXNext(true);
   };
